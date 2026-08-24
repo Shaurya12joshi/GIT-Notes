@@ -58,6 +58,61 @@ Version control systems are of two types:
 
 > **GitHub is basically like YouTube for codebases.**
 
+# ⚙️ Installing Git
+
+Git can be used in **3 different ways**:
+
+1. 💻 **Git using Command Line / Terminal** — Using Git commands in the terminal *(old method)*
+2. 🧑‍💻 **Git using VS Code**
+3. 🖥️ **Git using GitHub Desktop** — Through a GUI
+
+---
+
+## 📥 Installing Git
+
+Install Git from here:
+
+🔗 https://git-scm.com/install/
+
+---
+
+## ✅ Verify Git Installation
+
+To verify if Git has been installed properly, run the command:
+
+```bash
+git --version
+```
+
+A **Git version number** will be displayed if Git is installed properly.
+
+---
+
+## 🚀 Initialising Git
+
+To initialise Git in a project:
+
+1. Open the **terminal**.
+2. Navigate to a folder containing the codebase using basic `cd` commands.
+3. Run the following command:
+
+```bash
+git init
+```
+
+This will initialise Git in the folder.
+
+---
+
+## 📊 Viewing Git Status
+
+To view the **Git status of files**, run:
+
+```bash
+git status
+```
+
+
 
 ---
 
