@@ -33,3 +33,27 @@ Version control systems are of two types:
 * 📴 Can be used **offline**.
 * 💾 Commits can be made offline.
 * 🌐 Once the internet is available, the commits can be **pushed to the repository**.
+
+# 🔀 Git vs GitHub
+
+## 🔀 Git
+
+* Git is a **version control system**.
+* It **tracks changes in the codebase**.
+* Basically, it converts folders into a **repository / `.git` directory**.
+* You can see the **history of any repository** using Git.
+* 💡 **In simple terms:** Git is software used to **track code history**.
+
+---
+
+## 🐙 GitHub
+
+* GitHub is an **online platform where Git repositories are hosted**.
+* Earlier, people had to create and manage **remote repositories** using Git, which could become complicated.
+* GitHub was introduced to make this process easier by handling many of the complicated Git operations through its platform.
+* GitHub became very popular, and **Microsoft acquired GitHub in 2018**.
+* 🌐 **In simple terms:** GitHub is a platform to **host a repository online**.
+
+### 🎥 Simple Analogy
+
+> **GitHub is basically like YouTube for codebases.**
