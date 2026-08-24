@@ -57,3 +57,14 @@ Version control systems are of two types:
 ### 🎥 Simple Analogy
 
 > **GitHub is basically like YouTube for codebases.**
+
+
+---
+
+## 🙌 Credits
+
+These notes were made while learning **Git & GitHub from CodeWithHarry**. Full credit goes to **CodeWithHarry** for the explanations and learning material used while creating these notes.
+
+🎥 **Course / Video:**
+https://www.youtube.com/watch?v=AB3J8ufDYHQ
+
