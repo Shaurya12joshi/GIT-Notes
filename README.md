@@ -191,6 +191,96 @@ Remote Repository
 Working Directory
 ```
 
+# ⚙️ Configure Your Username and Email
+
+To update / set your **username**:
+
+```bash
+git config --global user.name "Your_Name"
+```
+
+To update / set your **email**:
+
+```bash
+git config --global user.email "Your_Email"
+```
+
+---
+
+# 🛠️ Big 4 Git Commands
+
+### 1. `git init`
+
+Used for **initialising Git in a codebase**.
+
+Git starts tracking the codebase after this.
+
+```bash
+git init
+```
+
+---
+
+### 2. `git status`
+
+Used to view:
+
+* Which files are being tracked
+* Which files have been changed
+* Which files are in the **Staging Area**
+* Which files are in the Staging Area but **not committed**
+
+```bash
+git status
+```
+
+---
+
+### 3. `git add`
+
+Used to add files to the **Staging Area**.
+
+```bash
+git add <file_name>
+```
+
+---
+
+### 4. `git commit`
+
+Used to commit files with a **commit message** so others can understand what changes you made.
+
+```bash
+git commit -m "Commit_Msg"
+```
+
+---
+
+# 💡 Tip
+
+Enable **hidden folders/files** to view the `.git` folder.
+
+⚠️ **Do not make any changes inside the `.git` folder.**
+
+---
+
+# 📜 Viewing Commit History
+
+### `git log`
+
+Used to see **who made what commit and at what date and time**.
+
+```bash
+git log
+```
+
+### `git log --oneline`
+
+Used to view a **concise summary** of the information available with the `git log` command.
+
+```bash
+git log --oneline
+```
 
 
 ---
