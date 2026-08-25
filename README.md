@@ -112,6 +112,85 @@ To view the **Git status of files**, run:
 git status
 ```
 
+# 🔄 How Git Works
+
+There are **4 stages** in which our code stays:
+
+1. 📁 **Working Directory**
+2. 📦 **Staging Area**
+3. 💾 **Local Repository**
+4. 🌐 **Remote Repository**
+
+---
+
+## 🔁 Git Workflow
+
+Once we initialise a Git repository in our codebase using:
+
+```bash
+git init
+```
+
+or clone an existing repository using:
+
+```bash
+git clone <url>
+```
+
+we will have a **Git repository in our codebase**.
+
+If we make any changes, we should move the codebase to the **Staging Area** using the `git add` command.
+
+```bash
+git add
+```
+
+Doing this, the code files are now added to the **Staging Area**.
+
+Next, we **commit the code files** with a commit message so that others can understand the changes that we made in the code files.
+
+Commit is done using:
+
+```bash
+git commit
+```
+
+Next, we **push the changes to the Remote Repository** using:
+
+```bash
+git push
+```
+
+To get the changes made by our **co-workers**, we use:
+
+```bash
+git pull
+```
+
+---
+
+## 📌 Git Workflow at a Glance
+
+```text
+Working Directory
+       ↓
+   git add
+       ↓
+Staging Area
+       ↓
+  git commit
+       ↓
+Local Repository
+       ↓
+   git push
+       ↓
+Remote Repository
+       ↓
+   git pull
+       ↓
+Working Directory
+```
+
 
 
 ---
