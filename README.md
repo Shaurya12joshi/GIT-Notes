@@ -281,6 +281,64 @@ Used to view a **concise summary** of the information available with the `git lo
 ```bash
 git log --oneline
 ```
+# 🌿 Branching
+
+**Branching** is done when you don't want to disturb the work being done in the **main branch**, but still want to build on the same codebase.
+
+A new branch allows you to work separately from the main branch. Once the work is complete, the branch can later be **merged back into the main branch**.
+
+```text
+              ┌── Feature Branch ──→ Merge
+             /                       ↓
+Main ───────●────────────────────────●
+```
+
+---
+
+## 🌱 Create a New Branch
+
+To create a new branch:
+
+```bash
+git branch NameOfBranch
+```
+
+---
+
+## 🔄 Switch Between Branches
+
+To switch from one branch to another:
+
+```bash
+git switch NameOfBranch
+```
+
+---
+
+## 🔀 Merge a Branch
+
+To merge a branch into the **main branch**:
+
+1. First switch to the **main branch**.
+2. Then merge the required branch.
+
+```bash
+git switch main
+```
+
+```bash
+git merge NameOfBranch
+```
+
+---
+
+## 🗑️ Delete a Branch
+
+To delete a branch:
+
+```bash
+git branch -d NameOfBranch
+```
 
 
 ---
