@@ -688,6 +688,161 @@ v2.0.0
 
 > **Lightweight Tag** → A simple name pointing to a commit.
 
+# 🔄 Git Rebase
+
+**Rebase** is used to move or **reapply the commits of one branch on top of another branch**.
+
+It is another way of integrating changes from one branch into another, similar to merging.
+
+The main difference is that **rebase creates a linear history** by placing your branch's commits on top of the latest commits from the target branch.
+
+---
+
+## 🧠 Why Do We Use Rebase?
+
+Suppose we have:
+
+```text
+main
+A ── B ── C
+          \
+feature    D ── E
+```
+
+While we were working on the `feature` branch, new commits were added to `main`.
+
+We can rebase our `feature` branch onto `main`:
+
+```bash
+git switch feature
+git rebase main
+```
+
+Git takes the commits from `feature` (`D` and `E`) and reapplies them on top of the latest `main`:
+
+```text
+main
+A ── B ── C
+          \
+feature    D' ── E'
+```
+
+The resulting history is linear:
+
+```text
+A ── B ── C ── D' ── E'
+```
+
+> `D'` and `E'` represent new versions of the commits because Git re-applies them during the rebase.
+
+---
+
+## 🔀 Merge vs Rebase
+
+Both **merge** and **rebase** can be used to bring changes from one branch into another, but they handle the history differently.
+
+### Merge
+
+```bash
+git switch feature
+git merge main
+```
+
+This preserves the existing branch history and may create a **merge commit**.
+
+```text
+A ── B ── C ───── M
+     \           /
+      D ── E ───
+```
+
+### Rebase
+
+```bash
+git switch feature
+git rebase main
+```
+
+This moves the feature commits on top of `main` and creates a **linear history**.
+
+```text
+A ── B ── C ── D' ── E'
+```
+
+### 💡 Simple Difference
+
+> **Merge → Preserves branch history**
+
+> **Rebase → Creates a cleaner, linear history**
+
+---
+
+# ⚔️ Rebase Conflicts
+
+Just like merging, a **rebase can also result in conflicts** if Git cannot automatically apply a commit.
+
+Git will stop the rebase and ask you to resolve the conflict manually.
+
+After resolving the conflict:
+
+```bash
+git add <file_name>
+```
+
+Then continue the rebase:
+
+```bash
+git rebase --continue
+```
+
+If you want to cancel the rebase and return to the state before the rebase started:
+
+```bash
+git rebase --abort
+```
+
+---
+
+# ⚠️ Important
+
+Rebase **rewrites commit history** because the commits are recreated when they are reapplied.
+
+Therefore, avoid rebasing commits that have already been **shared with other developers** unless you know exactly what you're doing.
+
+A common approach is to rebase your **local feature branch** before merging it into the main branch.
+
+---
+
+## 📌 Common Rebase Commands
+
+| Command                 | Purpose                                 |
+| ----------------------- | --------------------------------------- |
+| `git rebase main`       | Rebase the current branch onto `main`   |
+| `git rebase --continue` | Continue after resolving a conflict     |
+| `git rebase --abort`    | Cancel the rebase                       |
+| `git rebase --skip`     | Skip the current commit during a rebase |
+
+---
+
+## 🔄 Rebase Workflow
+
+```text
+          ┌── Feature Branch
+          │
+A ── B ── C ── D ── E
+     │
+     └── Main gets new commits
+              ↓
+        git rebase main
+              ↓
+     Feature commits are
+     reapplied on top of main
+              ↓
+        A ── B ── C ── D' ── E'
+              ↓
+        ✅ Linear History
+```
+
 
 ---
 
