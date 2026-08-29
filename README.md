@@ -581,6 +581,112 @@ git stash pop / git stash apply
      ↓
 Continue Your Work
 ```
+# 🏷️ Git Tags
+
+Git **tags** are used to mark a specific commit in the repository.
+
+They are commonly used to mark important points in a project's history, such as a **release or version**.
+
+For example:
+
+```text
+v1.0.0
+v1.1.0
+v2.0.0
+```
+
+---
+
+## 📌 Types of Git Tags
+
+There are **2 types of tags in Git**:
+
+1. 📝 **Annotated Tags**
+2. 🏷️ **Lightweight Tags**
+
+---
+
+## 📝 1. Annotated Tag
+
+An **annotated tag** is a tag that contains additional information such as:
+
+* Tag name
+* Tag message
+* Tagger information
+* Date
+
+It is useful for marking **important releases** because the tag contains information about why it was created.
+
+### Creating an Annotated Tag
+
+First, **commit your changes**.
+
+Then create the tag:
+
+```bash
+git tag -a v1.x.x -m "Tag Message"
+```
+
+For example:
+
+```bash
+git tag -a v1.0.0 -m "First Release"
+```
+
+---
+
+## 🏷️ 2. Lightweight Tag
+
+A **lightweight tag** is a simple pointer to a specific commit.
+
+It does not contain the additional information that an annotated tag stores.
+
+### Creating a Lightweight Tag
+
+```bash
+git tag v1.x.x
+```
+
+For example:
+
+```bash
+git tag v1.0.0
+```
+
+---
+
+## 🔍 View Tags
+
+To view the tags created in the repository:
+
+```bash
+git tag
+```
+
+Example output:
+
+```text
+v1.0.0
+v1.1.0
+v2.0.0
+```
+
+---
+
+## 🆚 Annotated vs Lightweight
+
+|                          | 📝 Annotated | 🏷️ Lightweight |
+| ------------------------ | ------------ | --------------- |
+| Additional information   | ✅ Yes        | ❌ No            |
+| Tag message              | ✅ Yes        | ❌ No            |
+| Simple pointer to commit | ❌            | ✅               |
+| Useful for releases      | ✅            | ✅               |
+
+### 💡 Simple Way to Remember
+
+> **Annotated Tag** → A tag with information attached to it.
+
+> **Lightweight Tag** → A simple name pointing to a commit.
 
 
 ---
