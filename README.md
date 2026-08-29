@@ -340,6 +340,113 @@ To delete a branch:
 git branch -d NameOfBranch
 ```
 
+# ⚔️ Merge Conflicts
+
+A **merge conflict** occurs when Git cannot automatically combine changes from two branches.
+
+This commonly happens when the **same file has been changed in different ways** in two branches.
+
+For example:
+
+```text id="m8f4qk"
+main branch
+    │
+    └── app.js
+         │
+         └── balance = 100
+
+feature branch
+    │
+    └── app.js
+         │
+         └── balance = 500
+```
+
+If both branches changed the same part of `app.js` and we try to merge them, Git may not know **which change should be kept**.
+
+---
+
+## 🚨 What Happens During a Conflict?
+
+When Git encounters a conflict, the merge is stopped and Git marks the conflicting section in the file.
+
+It may look something like this:
+
+```text id="9y2k6w"
+<<<<<<< HEAD
+balance = 100
+=======
+balance = 500
+>>>>>>> feature
+```
+
+The markers indicate:
+
+* `<<<<<<< HEAD` → Changes from the branch you are currently on
+* `=======` → Separates the two versions
+* `>>>>>>> feature` → Changes coming from the branch being merged
+
+---
+
+## 🛠️ How to Resolve a Merge Conflict
+
+A person has to **manually inspect the conflicting code** and decide what should be kept.
+
+You can:
+
+* ✅ Keep the changes from the current branch
+* ✅ Keep the changes from the other branch
+* 🔀 Keep parts of both changes
+* ✏️ Write a completely different solution
+
+After deciding what should remain, remove the conflict markers and save the file.
+
+Then the resolved file needs to be added to the **Staging Area**:
+
+```bash
+git add <file_name>
+```
+
+After all conflicts have been resolved and staged, complete the merge with a commit:
+
+```bash
+git commit
+```
+
+---
+
+## 🧠 Important Point
+
+Git can automatically merge many changes when they affect different parts of a file.
+
+A **merge conflict does not mean Git is broken**. It simply means Git needs a human to decide **which version of the conflicting code is correct**.
+
+> **Git can detect the conflict, but the developer has to decide how it should be resolved.**
+
+---
+
+## 🔄 Conflict Resolution Flow
+
+```text
+Merge Branches
+      ↓
+Git Detects Conflict
+      ↓
+Merge Paused
+      ↓
+Manually Inspect Conflicting Files
+      ↓
+Choose / Combine Changes
+      ↓
+Remove Conflict Markers
+      ↓
+git add
+      ↓
+git commit
+      ↓
+✅ Merge Completed
+```
+
 
 ---
 
