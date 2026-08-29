@@ -446,6 +446,141 @@ git commit
       ↓
 ✅ Merge Completed
 ```
+# 📦 Stashing
+
+**Stashing** is useful when you have a lot of files being edited, but suddenly need to make an **emergency or high-priority change**.
+
+Instead of committing your unfinished work, you can **stash** the changes.
+
+Stashing temporarily stores your uncommitted changes in a separate place and makes your **working directory clean**, allowing you to work on something else.
+
+You can also store **multiple sets of changes** in the stash.
+
+---
+
+## 📥 Add Changes to Stash
+
+To stash your current changes:
+
+```bash
+git stash
+```
+
+This temporarily stores your changes and cleans your working directory.
+
+---
+
+## 📋 View Stashed Changes
+
+To view the changes currently saved in the stash:
+
+```bash
+git stash list
+```
+
+---
+
+## ♻️ Restore Stashed Changes
+
+To restore the most recent stashed changes and **remove them from the stash**:
+
+```bash
+git stash pop
+```
+
+---
+
+## 🔄 Apply Stashed Changes
+
+To restore the stashed changes while **keeping them in the stash**:
+
+```bash
+git stash apply
+```
+
+### 🆚 `git stash pop` vs `git stash apply`
+
+| Command           | Restores Changes | Keeps Changes in Stash |
+| ----------------- | :--------------: | :--------------------: |
+| `git stash pop`   |         ✅        |            ❌           |
+| `git stash apply` |         ✅        |            ✅           |
+
+---
+
+# 🌿 Best Practices for Branching
+
+### 1. 🎯 One Feature → One Branch
+
+Create a separate branch for each feature or piece of work.
+
+```text
+Feature A → Branch A
+Feature B → Branch B
+Feature C → Branch C
+```
+
+---
+
+### 2. 🚫 Never Develop Directly on `main`
+
+Avoid making your development changes directly on the **main branch**.
+
+Instead, create a separate branch and merge it into `main` once the work is ready.
+
+---
+
+### 3. 🗑️ Delete the Branch Once Merged
+
+Once a branch has been successfully merged into `main`, delete it if it is no longer needed.
+
+```bash
+git branch -d NameOfBranch
+```
+
+---
+
+### 4. 🏷️ Use Meaningful Branch Names
+
+Use branch names that clearly describe what you are working on.
+
+For example:
+
+```text
+feature/login
+feature/payment
+fix/navbar
+fix/authentication
+```
+
+---
+
+### 5. ⏱️ Keep Branches Short-Lived
+
+Avoid keeping branches open for a long period of time.
+
+**Merge branches as soon as the work is ready** to reduce the chances of conflicts and keep the codebase easier to manage.
+
+---
+
+## 🧠 Quick Summary
+
+```text
+🌿 Branching
+     ↓
+Work on a Feature
+     ↓
+📦 Need to switch urgently?
+     ↓
+git stash
+     ↓
+Working Directory becomes clean
+     ↓
+🚨 Handle Priority Work
+     ↓
+git stash pop / git stash apply
+     ↓
+Continue Your Work
+```
 
 
 ---
